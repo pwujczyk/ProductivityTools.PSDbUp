@@ -46,9 +46,10 @@ function Invoke-DbUp {
 	[Parameter(Mandatory=$true)]
 	[string]$DatabaseName, 
 	
-	[Parameter(Mandatory=$true)]
+	[Parameter(Mandatory=$false)]
 	[string]$SchemaName, 
 	
+	[Parameter(Mandatory=$false)]
 	[string]$scriptPath)
 
 	Write-Verbose "Invoke-DbUp started"
