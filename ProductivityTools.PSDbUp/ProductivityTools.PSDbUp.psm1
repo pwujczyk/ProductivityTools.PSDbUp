@@ -32,7 +32,7 @@ function PerformDbUp()
 	$dbUp = [SqlServerExtensions]::JournalToSqlTable($dbUp, "$SchemaName", 'DbUp')
 	$dbUp = [StandardExtensions]::LogToConsole($dbUp)
 	$upgradeResult = $dbUp.Build().PerformUpgrade()
-	Write-Output $upgradeResult
+	$upgradeResult |ConvertTo-Json
 }
 
 
@@ -61,6 +61,7 @@ function Invoke-DbUp {
 	
 	Write-Verbose "Scripts will be taken from $scriptPath"
 	
+	New-SqlSchema -DatabaseName $DatabaseName -SqlInstance $SqlInstance -SchemaName $SchemaName -Verbose:$VerbosePreference
 	PerformDbUp $SqlInstance $DatabaseName $SchemaName $scriptPath 
 	Write-Verbose "finished"
 }
