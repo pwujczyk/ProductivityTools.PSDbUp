@@ -19,6 +19,7 @@ function GetLastScriptNumer
 		}
 	}
 
+	Write-Verbose "Last number of the script is $number"
 	return $number
 }
 
@@ -35,11 +36,13 @@ function GenerateScriptName
 	
 	$nextNumer=$LastNumber+1
 	$resultName=$nextNumer.ToString().PadLeft(5,'0')+'.'+$Name+'.sql'
+	
+	Write-Verbose "Next name for the script is $resultName"
 	return $resultName
 }
 
 
-function Create-Migration{
+function New-DbUpMigration{
 	[cmdletbinding()]
 	param (
 	[Parameter(Mandatory=$true)]
@@ -62,5 +65,5 @@ function Create-Migration{
 	$nextScriptName=GenerateScriptName $lastScriptNumber $Name
 	
 	
-	New-Item -Path $Path -Name $nextScriptName -ItemType File -Value $Content
+	New-Item -Path $Path -Name $nextScriptName -ItemType File -Value $Content |Out-Null
 }
