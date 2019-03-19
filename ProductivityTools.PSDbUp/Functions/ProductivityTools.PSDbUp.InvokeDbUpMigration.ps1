@@ -32,25 +32,17 @@ function PerformDbUp()
 	$dbUp = [SqlServerExtensions]::JournalToSqlTable($dbUp, "$SchemaName", 'DbUp')
 	$dbUp = [StandardExtensions]::LogToConsole($dbUp)
 	$upgradeResult = $dbUp.Build().PerformUpgrade()
-	$upgradeResult | ConvertTo-Json 
-	
-	Write-Host "============"
-	
+
+
 	$scripts=$upgradeResult.Scripts
-	
-	if ($upgradeResult.Sucessfull)
+	if ($upgradeResult.Successful)
 	{
-		Write-InGreen Success
-	}
-	else
-	{
-		$errors=ConvertTo-Json $upgradeResult.Error -Depth 1
-		$errors
-		
+		Write-Host Success -ForegroundColor Green
 	}
 	
-	$scripts=$upgradeResult.Scripts
-	ConvertTo-Json  $scripts
+	$result=$upgradeResult
+	$resultJson=ConvertTo-Json $result
+	Write-Verbose $resultJson
 }
 
 
