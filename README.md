@@ -14,6 +14,6 @@ Invoke-DbUpMigration -SqlInstance '.\SQL2017' -DatabaseName 'xxx1' -SchemaName p
 
 One not obvious param is SchemaName. Setting it will impact schema under which DBUp Log will be saved.
 
-#New-DbUpMigration
+# New-DbUpMigration
 
 Module also exposes cmdlet which help in creating the new migration. When executed in the directory with previous scripts it checks last number assigned to migration and create new one with provided content.
