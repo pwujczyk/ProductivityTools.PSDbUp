@@ -31,11 +31,14 @@
     <Compile Include="Runner.ps1" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="lib\" />
+    <Folder Include="Functions\lib\" />
+    <Folder Include="Functions\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="lib\dbup-core.dll" />
-    <Content Include="lib\dbup-sqlserver.dll" />
+    <Content Include="Functions\lib\dbup-core.dll" />
+    <Content Include="Functions\lib\dbup-sqlserver.dll" />
+    <Content Include="Functions\ProductivityTools.PSDbUp.NewDbUpMigration.ps1" />
+    <Content Include="Functions\ProductivityTools.PSDbUp.InvokeDbUpMigration.ps1" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="Build" />
