@@ -5,7 +5,7 @@ clear
 Import-Module d:\GitHub\ProductivityTools.PSSQLCommands\ProductivityTools.PSSQLCommands\ProductivityTools.PSSQLCommands.psd1
 Import-Module "$PSScriptRoot\ProductivityTools.PSDbUp.psm1" -Force
 
-Create-DbUpMigration 'pawel' 'fdsa' -Verbose
+#Create-DbUpMigration 'pawel' 'fdsa' -Verbose
 
 #Invoke-DbUp
 
@@ -13,4 +13,6 @@ Create-DbUpMigration 'pawel' 'fdsa' -Verbose
 
 #Invoke-DbUp '.\SQL2017' 'PawelDT' 'salary' -Verbose
 clear
-Invoke-DbUpMigration '.\SQL2017' 'xxx1' 'me' -Verbose
+#Invoke-DbUpMigration '.\SQL2017' 'xxx1' 'me' -Verbose
+
+Invoke-DbUpMigration -SqlInstance ".\sql2017" -DatabaseName EcoVadisTM -Verbose 

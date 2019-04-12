@@ -57,7 +57,7 @@ function Invoke-DbUpMigration {
 	[string]$DatabaseName, 
 	
 	[Parameter(Mandatory=$false)]
-	[string]$SchemaName, 
+	[string]$SchemaName='dbo', 
 	
 	[Parameter(Mandatory=$false)]
 	[string]$Path	
@@ -70,7 +70,7 @@ function Invoke-DbUpMigration {
 		$Path=Get-Location
 	}
 	
-	Write-Verbose "Scripts will be taken from $scriptPath"
+	Write-Verbose "Scripts will be taken from $Path"
 	
 	New-SqlSchema -DatabaseName $DatabaseName -SqlInstance $SqlInstance -SchemaName $SchemaName -Verbose:$VerbosePreference
 	PerformDbUp $SqlInstance $DatabaseName $SchemaName $Path 
