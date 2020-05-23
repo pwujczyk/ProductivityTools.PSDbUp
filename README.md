@@ -10,7 +10,7 @@
     </a>
 </p>
 
-# ProductivityTools.PSDbUp
+# PSDbUp
 
 Module invokes DBUp from PowerShell for  given directory.
 
@@ -22,9 +22,9 @@ Module exposes cmdlet which help in creating the new migration. When executed in
 
 ![New migration](Images/NewMigration.png)
 
-```PowerShell
+````PowerShell
 New-DbUpMigration -Name "init" -Content "CREATE TABLE Test(TestId INT)" -Verbose
-```
+````
 
 Above command will create in directory SQL file with provided content.
 
@@ -34,7 +34,7 @@ Above command will create in directory SQL file with provided content.
 
 If scripts are created we can go to the directory with them and call  Invoke-DbUpMigration
 
-```
+``` PowerShell
 Invoke-DbUpMigration -SqlInstance '.\sql2019' -DatabaseName "Test123" -SchemaName "dbup" -Verbose
 ```
 
@@ -46,4 +46,5 @@ Scripts should be invoked.
 
 ![Lock screen](Images/schema.png)
 
-### SchemaName - parameter tell in which schema migration log table should be created
+### SchemaName 
+This is parameter tell in which schema migration log table should be created
