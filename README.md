@@ -23,7 +23,7 @@ Module exposes cmdlet which help in creating the new migration. When executed in
 ![New migration](Images/NewMigration.png)
 
 ```PowerShell
-New-DbUpMigration -Name "init" -Content "CREATE TABLE Test(TestId INT" -Verbose
+New-DbUpMigration -Name "init" -Content "CREATE TABLE Test(TestId INT)" -Verbose
 ```
 
 Above command will create in directory SQL file with provided content.
