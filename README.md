@@ -12,7 +12,9 @@
 
 # ProductivityTools.PSDbUp
 
-Module invokes DBUp from given directory.
+Module invokes DBUp from PowerShell for  given directory.
+
+Often I am starting application with gathering data. First I am creating database, next I create some simple form in Microsoft Access and later if whole idea make sense I am adding Windows application. This module helps me to create database in structired way and later use written scripts in final application.
 
 Go to the directory with the scripts and call  Invoke-DbUpMigration
 
