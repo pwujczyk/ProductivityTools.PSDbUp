@@ -13,6 +13,7 @@
 # PSDbUp
 
 Module invokes DBUp from PowerShell for  given directory.
+<!--more-->
 
 Often I am starting application with gathering data. First I am creating database, next I create some simple form in Microsoft Access and later if whole idea make sense I am adding Windows application. This module helps me to create database in structured way and later use written scripts in final application.
 
@@ -37,12 +38,13 @@ If scripts are created we can go to the directory with them and call  Invoke-DbU
 ``` PowerShell
 Invoke-DbUpMigration -SqlInstance '.\sql2019' -DatabaseName "Test123" -SchemaName "dbup" -Verbose
 ```
-
+<!--og-image-->
 ![Lock screen](Images/resultofdbup.png)
 
 Scripts should be invoked. 
 
 **Module doesn't create the database**, you need to create it manually.
+
 
 ![Lock screen](Images/schema.png)
 
